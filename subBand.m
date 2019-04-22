@@ -35,6 +35,7 @@ for k=1:32
        for i=1:32
            A=xx(i,:);
            wpt=wpdec(A,n,'db20');
+          % plot(wpt);
            %Theta
            cfs01=wprcoef(wpt,[6 4]);
            cfs02=wprcoef(wpt,[6 5]);

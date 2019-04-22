@@ -8,6 +8,7 @@ for k=1:32
         filename1=sprintf('s%d',k);
     end
     x=load([pathname1,filename1]);
+   % plot();
     m.data=x.data;
     m.labels = x.labels;
     m1=reshape(m.data,[40 40 63 128]);
