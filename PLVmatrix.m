@@ -1,8 +1,8 @@
-
+ %Z=load('E:\脑电数据集\\s01\s01-1.mat');
  pathname1='E:\脑电数据集\前十秒数据\';
  lastpathname1='E:\脑电数据集\后十秒数据\';
- pathname3='E:\脑电数据集\前十秒PLV矩阵\';
- lastpathname2='E:\脑电数据集\后十秒PLV矩阵\';
+ pathname3='E:\脑电数据集\前PLV矩阵\';
+ lastpathname2='E:\脑电数据集\后PLV矩阵\';
  
  for k=1:32
     if k<10
@@ -30,6 +30,8 @@
        
        x=load([pathname2,filename2]);
        y=load([lastPathname,filename2]);
+       postLabels = x.labels;
+       lastLabels = y.labels;
       % y1 = y.lastAlpha;
        %y2 = y.lastBeta1;
        %y3 = y.lastBeta2;
@@ -38,17 +40,28 @@
        %处理前后10秒的数据，算PLV
    %    n=1280;
    
-           postAlpha = calculatePLV(x.postAlpha);
-           postBeta1 = calculatePLV(x.postBeta1);
-            postBeta2 = calculatePLV(x.postBeta2);
-              postTheta = calculatePLV(x.postTheta);
+         %  postAlpha = calculatePLV(x.postAlpha);
+          % postBeta1 = calculatePLV(x.postBeta1);
+           % postBeta2 = calculatePLV(x.postBeta2);
+            %  postTheta = calculatePLV(x.postTheta);
               
-           lastAlpha = calculatePLV(y.lastAlpha);
-           lastBeta1 = calculatePLV(y.lastBeta1);
-           lastBeta2 = calculatePLV(y.lastBeta2);
-           lastTheta = calculatePLV(y.lastTheta);
+           %lastAlpha = calculatePLV(y.lastAlpha);
+           %lastBeta1 = calculatePLV(y.lastBeta1);
+           %lastBeta2 = calculatePLV(y.lastBeta2);
+           %lastTheta = calculatePLV(y.lastTheta);
+           
+           
+           postAlpha = PLV(x.postAlpha);
+           postBeta1 = PLV(x.postBeta1);
+            postBeta2 = PLV(x.postBeta2);
+              postTheta = PLV(x.postTheta);
+              
+           lastAlpha = PLV(y.lastAlpha);
+           lastBeta1 = PLV(y.lastBeta1);
+           lastBeta2 = PLV(y.lastBeta2);
+           lastTheta = PLV(y.lastTheta);
                
-   save([pathname4,filename2],'postAlpha','postBeta1','postBeta2','postTheta');
-   save([lastPathname1,filename2],'lastAlpha','lastBeta1','lastBeta2','lastTheta');
+   save([pathname4,filename2],'postAlpha','postBeta1','postBeta2','postTheta','postLabels');
+   save([lastPathname1,filename2],'lastAlpha','lastBeta1','lastBeta2','lastTheta','lastLabels');
     end
  end

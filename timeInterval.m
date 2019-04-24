@@ -28,6 +28,7 @@ for k=1:32
        m.Beta1  = x.Beta1;
        m.Beta2 = x.Beta2;
        m.Theta = x.Theta;
+       labels = x.labels;
     mAl=reshape(m.Alpha,[32 20*128]);
     mBe1 = reshape(m.Beta1,[32 20*128]);
     mBe2 = reshape(m.Beta2,[32 20*128]);
@@ -67,7 +68,7 @@ for k=1:32
         if k>=10
             filename2=sprintf('s%d-%d',k,j);
         end
-        save([pathname5,filename2],'postAlpha','postBeta1','postBeta2','postTheta');
-        save([pathname6,filename2],'lastAlpha','lastBeta1','lastBeta2','lastTheta');
+        save([pathname5,filename2],'postAlpha','postBeta1','postBeta2','postTheta','labels');
+        save([pathname6,filename2],'lastAlpha','lastBeta1','lastBeta2','lastTheta','labels');
     end
 end

@@ -27,6 +27,7 @@ for k=1:32
        end
        x=load([pathname2,filename2]);
        xx=x.data;
+       labels = x.labels;
        Theta=[];    %4-7Hz,(6,4)-(6,7)
        Alpha=[];    %8-12Hz,(6,8)-(6,12)
        Beta1=[];    %13-19Hz,(6,13)-(6,19)
@@ -76,7 +77,7 @@ for k=1:32
            cfs3=cfs31+cfs32+cfs33+cfs34+cfs35+cfs36+cfs37+cfs38+cfs39+cfs310+cfs311;
            Beta2=[Beta2;cfs3];
            %±£´æ
-           save([pathname4,filename2],'Theta','Alpha','Beta1','Beta2');
+           save([pathname4,filename2],'Theta','Alpha','Beta1','Beta2','labelsx');
 %            save([pathname4,filename2],'Alpha');
 %            save([pathname4,filename2],'Beta1');
 %            save([pathname4,filename2],'Beta2');
