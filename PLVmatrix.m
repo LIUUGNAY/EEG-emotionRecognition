@@ -1,8 +1,7 @@
  %Z=load('E:\脑电数据集\\s01\s01-1.mat');
- pathname1='E:\脑电数据集\前十秒数据\';
- lastpathname1='E:\脑电数据集\后十秒数据\';
- pathname3='E:\脑电数据集\前PLV矩阵\';
- lastpathname2='E:\脑电数据集\后PLV矩阵\';
+ pathname1='E:\脑电数据集\分时段后数据\';
+ pathname3='E:\脑电数据集\PLV矩阵\';
+
  
  for k=1:32
     if k<10
@@ -12,13 +11,12 @@
         filename1=sprintf('s%d\\',k);
     end
     pathname2=[pathname1,filename1];
-  lastPathname=[lastpathname1,filename1];
+
     
     pathname4=[pathname3,filename1];
-    lastPathname1 = [lastpathname2,filename1];
+
     
-    mkdir(pathname3,filename1);
-    mkdir(lastpathname2,filename1);%首次执行时需要创建新的文件夹，再次执行可不用
+    mkdir(pathname3,filename1);%首次执行时需要创建新的文件夹，再次执行可不用
     %每人40次试验
     for j=1:40
        if k<10
@@ -29,9 +27,7 @@
        end
        
        x=load([pathname2,filename2]);
-       y=load([lastPathname,filename2]);
-       postLabels = x.labels;
-       lastLabels = y.labels;
+      labels = x.labels;
       % y1 = y.lastAlpha;
        %y2 = y.lastBeta1;
        %y3 = y.lastBeta2;
@@ -50,18 +46,18 @@
            %lastBeta2 = calculatePLV(y.lastBeta2);
            %lastTheta = calculatePLV(y.lastTheta);
            
+           Theta.PLV1 = PLV(x.Theta.data1);
+           Alpha.PLV1 = PLV(x.Alpha.data1);
+           Beta1.PLV1 = PLV(x.Beta1.data1);
+            Beta2.PLV1 = PLV(x.Beta2.data1);
+             
+               Theta.PLV2 = PLV(x.Theta.data2); 
+             Alpha.PLV2 = PLV(x.Alpha.data2);
+           Beta1.PLV2 = PLV(x.Beta1.data2);
+            Beta2.PLV2 = PLV(x.Beta2.data2);
            
-           postAlpha = PLV(x.postAlpha);
-           postBeta1 = PLV(x.postBeta1);
-            postBeta2 = PLV(x.postBeta2);
-              postTheta = PLV(x.postTheta);
-              
-           lastAlpha = PLV(y.lastAlpha);
-           lastBeta1 = PLV(y.lastBeta1);
-           lastBeta2 = PLV(y.lastBeta2);
-           lastTheta = PLV(y.lastTheta);
+         
                
-   save([pathname4,filename2],'postAlpha','postBeta1','postBeta2','postTheta','postLabels');
-   save([lastPathname1,filename2],'lastAlpha','lastBeta1','lastBeta2','lastTheta','lastLabels');
+   save([pathname4,filename2],'Theta','Alpha','Beta1','Beta2','labels');
     end
  end

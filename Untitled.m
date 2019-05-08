@@ -6,7 +6,5 @@ y= f_ThresholdSimple(x.postAlpha);
 save('E:\脑电数据集\二值化矩阵\s01\s01-1','y');
 figure;
 imagesc(y);
-%networkPng(y);
 
-% ttr = f_randNetwork(x.mtnew);
 

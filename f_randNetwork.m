@@ -1,3 +1,4 @@
+
 function ttr = f_randNetwork(tt)
 % % % Function for randomize a network.
 % INPUTS:  tt = conectivity network matrix to be randomiced

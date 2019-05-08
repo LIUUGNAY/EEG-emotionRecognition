@@ -1,4 +1,4 @@
-function [mtnew] = f_ThresholdSimple(matrix)
+function [mtnew] = f_ThresholdSimple(matrix,thr)
 % % % Thresholding matrix due to certain threshold. It takes all elements below
 % threshold (thr) as zero, surviving just links higher and equal than (thr)
 %   Inputs: matrix      weighted or binary connectivity matrix
@@ -10,7 +10,7 @@ function [mtnew] = f_ThresholdSimple(matrix)
 % JohannM.
 % Paris(2014)
 % ..............................................................................
-thr = 0.12;
+
 mt = matrix;
 mt(mt < thr) = 0;
 mt(mt > thr) = 1;
