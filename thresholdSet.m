@@ -26,8 +26,8 @@ pathname1='E:\脑电数据集\PLV矩阵\';
        
        x=load([pathname2,filename2]);  
       labels = x.labels;
-        thr = 0.12;
-       for i=1:29
+        thr = 0.05 ;
+       for i=1:20
            filename4=sprintf('%d',i);
         Alpha.PLV1 = f_ThresholdSimple(x.Alpha.PLV1,thr);
            Beta1.PLV1 = f_ThresholdSimple(x.Beta1.PLV1,thr);

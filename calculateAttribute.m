@@ -2,7 +2,7 @@
 
 
 pathname1='E:\脑电数据集\二值化矩阵\';
-pathname3='E:\脑电数据集\网络属性\';
+pathname3='E:\脑电数据集\网络属性特征值\';
 clustering=[];
 %32个被试者
 for k=1:32
@@ -29,11 +29,22 @@ for k=1:32
        pathname5=[pathname2,filename3];   %'E:\脑电数据集\二值化矩阵\s01\s01-1'
        pathname6=[pathname4,filename3];    %'E:\脑电数据集\网络属性\s01\s01-1'
        
-       for i=1:29
+       for i=1:20
            filename4=sprintf('%d',i);
            x=load([pathname5,filename4]);   %'E:\脑电数据集\二值化矩阵\s01\s01-1\1.mat'
-           labels=x.labels;
-           
+           %labels=x.labels;
+           if (x.labels(1) > 5)
+               labels(1) = 2;
+           end
+           if (x.labels(1) <= 5)
+               labels(1) = 1;
+           end
+           if (x.labels(2) > 5)
+               labels(2) = 2;
+           end
+           if (x.labels(2) <= 5)
+               labels(2) = 1;
+           end
            %聚类系数
            Theta.PLV1.clustering=sum(clustering_coef_bu(x.Theta.PLV1))/32;
            Theta.PLV2.clustering=sum(clustering_coef_bu(x.Theta.PLV2))/32;

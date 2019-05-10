@@ -1,7 +1,7 @@
 %计算PLV1和PLV2的均值
 
 
-pathname1='E:\脑电数据集\网络属性\';
+pathname1='E:\脑电数据集\网络属性特征值\';
 pathname3='E:\脑电数据集\网络属性均值\';
 %32个被试者
 clustering=[];
@@ -29,7 +29,7 @@ for k=1:32
        pathname5=[pathname2,filename3];   %'E:\脑电数据集\网络属性\s01\s01-1'
        pathname6=[pathname4,filename3];    %'E:\脑电数据集\网络属性均值\s01\s01-1'
 
-       for i=1:29
+       for i=1:20
            filename4=sprintf('%d',i);
            x=load([pathname5,filename4]);   %'E:\脑电数据集\网络属性\s01\s01-1\1.mat'
            labels=x.labels;
