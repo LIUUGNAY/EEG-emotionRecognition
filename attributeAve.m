@@ -1,8 +1,9 @@
 %计算PLV1和PLV2的均值
 
 
-pathname1='E:\脑电数据集\网络属性特征值\';
-pathname3='E:\脑电数据集\网络属性均值\';
+pathname1='E:\脑电文件夹\网络属性特征值\';
+pathname3='E:\脑电文件夹\网络属性均值\';
+
 %32个被试者
 clustering=[];
 for k=1:32

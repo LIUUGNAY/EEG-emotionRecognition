@@ -1,5 +1,7 @@
-pathname1='E:\脑电数据集\PLV矩阵\';
- pathname3='E:\脑电数据集\二值化矩阵\';
+
+pathname1='E:\脑电文件夹\PLV矩阵\';
+ pathname3='E:\脑电文件夹\二值化矩阵\';
+
 
  for k=1:32
     if k<10
@@ -29,6 +31,7 @@ pathname1='E:\脑电数据集\PLV矩阵\';
         thr = 0.05 ;
        for i=1:20
            filename4=sprintf('%d',i);
+
         Alpha.PLV1 = f_ThresholdSimple(x.Alpha.PLV1,thr);
            Beta1.PLV1 = f_ThresholdSimple(x.Beta1.PLV1,thr);
             Beta2.PLV1 = f_ThresholdSimple(x.Beta2.PLV1,thr);
@@ -38,6 +41,55 @@ pathname1='E:\脑电数据集\PLV矩阵\';
            Beta1.PLV2 = f_ThresholdSimple(x.Beta1.PLV2,thr);
             Beta2.PLV2 = f_ThresholdSimple(x.Beta2.PLV2,thr);
               Theta.PLV2 = f_ThresholdSimple(x.Theta.PLV2,thr);    
+
+           %HAHV
+        Alpha.HAHV.PLV1 = f_ThresholdSimple(x.Alpha.HAHV.PLV1,thr);
+           Beta1.HAHV.PLV1 = f_ThresholdSimple(x.Beta1.HAHV.PLV1,thr);
+            Beta2.HAHV.PLV1 = f_ThresholdSimple(x.Beta2.HAHV.PLV1,thr);
+              Theta.HAHV.PLV1 = f_ThresholdSimple(x.Theta.HAHV.PLV1,thr);
+              
+              Alpha.HAHV.PLV2 = f_ThresholdSimple(x.Alpha.HAHV.PLV2,thr);
+           Beta1.HAHV.PLV2 = f_ThresholdSimple(x.Beta1.HAHV.PLV2,thr);
+            Beta2.HAHV.PLV2 = f_ThresholdSimple(x.Beta2.HAHV.PLV2,thr);
+              Theta.HAHV.PLV2 = f_ThresholdSimple(x.Theta.HAHV.PLV2,thr);    
+              
+                %HALV
+        Alpha.HALV.PLV1 = f_ThresholdSimple(x.Alpha.HALV.PLV1,thr);
+           Beta1.HALV.PLV1 = f_ThresholdSimple(x.Beta1.HALV.PLV1,thr);
+            Beta2.HALV.PLV1 = f_ThresholdSimple(x.Beta2.HALV.PLV1,thr);
+              Theta.HALV.PLV1 = f_ThresholdSimple(x.Theta.HALV.PLV1,thr);
+              
+              Alpha.HALV.PLV2 = f_ThresholdSimple(x.Alpha.HALV.PLV2,thr);
+           Beta1.HALV.PLV2 = f_ThresholdSimple(x.Beta1.HALV.PLV2,thr);
+            Beta2.HALV.PLV2 = f_ThresholdSimple(x.Beta2.HALV.PLV2,thr);
+              Theta.HALV.PLV2 = f_ThresholdSimple(x.Theta.HALV.PLV2,thr); 
+              
+                %LAHV
+        Alpha.LAHV.PLV1 = f_ThresholdSimple(x.Alpha.LAHV.PLV1,thr);
+           Beta1.LAHV.PLV1 = f_ThresholdSimple(x.Beta1.LAHV.PLV1,thr);
+            Beta2.LAHV.PLV1 = f_ThresholdSimple(x.Beta2.LAHV.PLV1,thr);
+              Theta.LAHV.PLV1 = f_ThresholdSimple(x.Theta.LAHV.PLV1,thr);
+              
+              Alpha.LAHV.PLV2 = f_ThresholdSimple(x.Alpha.LAHV.PLV2,thr);
+           Beta1.LAHV.PLV2 = f_ThresholdSimple(x.Beta1.LAHV.PLV2,thr);
+            Beta2.LAHV.PLV2 = f_ThresholdSimple(x.Beta2.LAHV.PLV2,thr);
+              Theta.LAHV.PLV2 = f_ThresholdSimple(x.Theta.LAHV.PLV2,thr); 
+              
+              
+              
+                %LALV
+        Alpha.LALV.PLV1 = f_ThresholdSimple(x.Alpha.LALV.PLV1,thr);
+           Beta1.LALV.PLV1 = f_ThresholdSimple(x.Beta1.LALV.PLV1,thr);
+            Beta2.LALV.PLV1 = f_ThresholdSimple(x.Beta2.LALV.PLV1,thr);
+              Theta.LALV.PLV1 = f_ThresholdSimple(x.Theta.LALV.PLV1,thr);
+              
+              Alpha.LALV.PLV2 = f_ThresholdSimple(x.Alpha.LALV.PLV2,thr);
+           Beta1.LALV.PLV2 = f_ThresholdSimple(x.Beta1.LALV.PLV2,thr);
+            Beta2.LALV.PLV2 = f_ThresholdSimple(x.Beta2.LALV.PLV2,thr);
+              Theta.LALV.PLV2 = f_ThresholdSimple(x.Theta.LALV.PLV2,thr); 
+              
+              
+
    save([pathname5,filename4],'Theta','Alpha','Beta1','Beta2','labels');
    thr = thr +0.01;
        end
