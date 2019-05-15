@@ -1,5 +1,5 @@
-pathname1='E:\脑电文件夹\PLV矩阵\';
- pathname3='E:\脑电文件夹\PLV矩阵网络均值\';
+pathname1='E:\脑电数据集\分效价唤醒度PLV矩阵\';
+ pathname3='E:\脑电数据集\分效价唤醒度PLV矩阵网络均值\';
 
  for k=1:32
     if k<10

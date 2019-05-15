@@ -1,5 +1,5 @@
-pathname1='E:\脑电文件夹\PLV矩阵\';
- pathname3='E:\脑电文件夹\不分波段-类样本均值PLV矩阵\';
+pathname1='E:\脑电数据集\分效价唤醒度 PLV矩阵\';
+ pathname3='E:\脑电数据集\不分波段-PLV矩阵\';
 
  for k=1:32
     if k<10
@@ -27,7 +27,10 @@ pathname1='E:\脑电文件夹\PLV矩阵\';
        x=load([pathname2,filename2]);
       labels = x.labels;
       
-           %HAHV
+      
+      %Theta
+      
+       %HAHV
            HAHV.PLV1 = (x.Alpha.HAHV.PLV1 + x.Beta1.HAHV.PLV1 + x.Beta2.HAHV.PLV1 + x.Theta.HAHV.PLV1)/4;
            HAHV.PLV2 = (x.Alpha.HAHV.PLV2 + x.Beta1.HAHV.PLV2 + x.Beta2.HAHV.PLV2 + x.Theta.HAHV.PLV2)/4;   
              %HALV
@@ -44,5 +47,3 @@ pathname1='E:\脑电文件夹\PLV矩阵\';
    save([pathname4,filename2],'HAHV','HALV','LAHV','LALV','labels');
        end
  end
-
- 

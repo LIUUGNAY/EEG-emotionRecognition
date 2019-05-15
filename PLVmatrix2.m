@@ -1,6 +1,6 @@
  %Z=load('E:\脑电数据集\\s01\s01-1.mat');
  pathname1='E:\脑电数据集\分时段后数据\';
- pathname3='E:\脑电数据集\PLV矩阵\';
+ pathname3='E:\脑电数据集\分效价唤醒度PLV矩阵\';
 
  
  for k=1:32
